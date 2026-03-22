@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rove India | Indian Tourist Place Videos</title>
+  <meta name="description" content="Rove India is a static tourism video showcase with state and union territory pages, curated media galleries, and festival travel ideas.">
+  <meta name="keywords" content="India tourism videos, state travel guide, union territory travel, destination videos, Indian festival travel">
+  <meta name="author" content="Rove India">
+  <meta name="theme-color" content="#8f4f2f">
+  <meta property="og:title" content="Rove India | Indian Tourist Place Videos">
+  <meta property="og:description" content="Discover Indian tourist places through curated destination videos and image galleries.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.roveindia.in/index.html">
+  <meta property="og:image" content="https://www.roveindia.in/images/pic.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.roveindia.in/index.html">
+  <link rel="preload" href="assets/site.css" as="style">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .legacy-note {
+      border-left: 4px solid rgba(143, 79, 47, 0.55);
+      padding-left: 0.68rem;
+      margin-top: 0.6rem;
+    }
+
+    .motif-band {
+      border: 1px dashed rgba(39, 95, 104, 0.35);
+      border-radius: 12px;
+      padding: 0.52rem 0.7rem;
+      margin-top: 0.7rem;
+      background: rgba(39, 95, 104, 0.07);
+      font-weight: 700;
+      color: #28535b;
+    }
+
+    .soft-flag-strip {
+      height: 5px;
+      border-radius: 999px;
+      margin: 0.7rem 0 0.1rem;
+      background: linear-gradient(90deg, rgba(255, 153, 51, 0.5), rgba(255, 255, 255, 0.92), rgba(19, 136, 8, 0.46));
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container">
+      <a class="brand" href="index.html">Rove India</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#placesSection">Videos</a>
+        <a href="#featuredCircuits">Featured</a>
+        <a href="admin.html">Admin Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="page-main container">
+    <section class="card hero-grid reveal" id="home">
+      <div>
+        <p class="eyebrow">Indian Tourist Places Video Hub</p>
+        <h1 class="hero-title">Explore India Through Stories, Routes, and Video Trails</h1>
+        <div class="welcome-strip">Welcome to Rove India | Dekho Apna Desh</div>
+        <p class="hero-sub">
+          This static tourism platform helps you discover Indian destinations through curated state and union territory pages.
+          Browse highlights, watch videos, and use seasonal festival inspiration to plan smarter trips.
+        </p>
+        <div class="inline-tools">
+          <a class="btn btn-primary" href="#placesSection">Select Place</a>
+          <a class="btn btn-secondary" href="admin.html">Open Admin Panel</a>
+          <button class="btn btn-outline" id="randomPickBtn" type="button">Random Place</button>
+        </div>
+        <p class="small-note" id="randomPickResult">Get an instant destination suggestion.</p>
+        <p class="motif-band">Crafted with subtle Indian-inspired colors, festive travel cues, and destination-first navigation.</p>
+        <div class="soft-flag-strip"></div>
+      </div>
+
+      <aside class="hero-side">
+        <h3>Rove India Snapshot</h3>
+        <p class="small-note" id="todayStamp"></p>
+        <div class="hero-image">
+          <img src="images/pic.jpg" alt="Rove India logo and travel identity" width="1200" height="900" decoding="async" fetchpriority="high">
+        </div>
+        <p class="legacy-note small-note">
+         Every state/UT page supports videos, pin images, and descriptions.
+        </p>
+      </aside>
+    </section>
+
+    <section class="card reveal" id="about">
+      <div class="section-heading">
+        <h2>About Rove India</h2>
+      </div>
+      <article>
+        <p>
+          India is a land of cultures, faith routes, architecture, cuisine, music, and landscapes. Rove India organizes destination content
+          in a clean static format so travelers can quickly browse states and union territories and jump to relevant video or photo media.
+        </p>
+        <p class="small-note">Theme: heritage + discovery + practical planning for Indian tourism audiences.</p>
+      </article>
+    </section>
+
+    <section class="card reveal">
+      <div class="stats-row">
+        <article class="stat-box"><strong id="totalPlaces">0</strong>Total Places</article>
+        <article class="stat-box"><strong id="stateCount">0</strong>States</article>
+        <article class="stat-box"><strong id="utCount">0</strong>Union Territories</article>
+        <article class="stat-box"><strong id="visibleRows">0</strong>Matches</article>
+      </div>
+    </section>
+
+    <section class="card reveal" id="placesSection">
+      <div class="section-heading">
+        <h2>Videos | Smart Place Explorer</h2>
+        <div class="inline-tools">
+          <a class="btn btn-soft btn-small" href="admin.html">Manage Content</a>
+        </div>
+      </div>
+
+      <div class="control-grid">
+        <div class="field">
+          <label for="searchInput">Search Place</label>
+          <input id="searchInput" type="search" placeholder="Rajasthan, Kerala, Delhi...">
+        </div>
+        <div class="field">
+          <label for="typeFilter">Type</label>
+          <select id="typeFilter">
+            <option value="all">All</option>
+            <option value="State">State</option>
+            <option value="Union Territory">Union Territory</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="regionFilter">Region</label>
+          <select id="regionFilter">
+            <option value="All">All Regions</option>
+            <option value="North">North</option>
+            <option value="South">South</option>
+            <option value="East">East</option>
+            <option value="West">West</option>
+            <option value="Central">Central</option>
+            <option value="Northeast">Northeast</option>
+            <option value="Islands">Islands</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sortFilter">Sort</label>
+          <select id="sortFilter">
+            <option value="az">A to Z</option>
+            <option value="za">Z to A</option>
+            <option value="region">By Region</option>
+          </select>
+        </div>
+        <button id="resetSearch" class="btn btn-outline" type="button">Reset</button>
+      </div>
+
+      <div class="explorer-meta">
+        <p class="small-note">Interactive cards with smooth hover/open transitions. Use filters to narrow down quickly.</p>
+        <p class="small-note">Tip: click any destination card to open that page.</p>
+      </div>
+
+      <div class="place-grid" id="placeGrid"></div>
+      <p class="small-note">Admin can add multiple YouTube videos and image cards with short highlights and descriptions for every destination page.</p>
+    </section>
+
+    <section class="card reveal" id="featuredCircuits">
+      <div class="section-heading">
+        <h2>Featured Indian Circuits</h2>
+        <span class="small-note">Static editorial highlights</span>
+      </div>
+      <div class="feature-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="card reveal">
+      <div class="section-heading">
+        <h2>Festival Travel Spotlight</h2>
+        <span class="small-note">Seasonal ideas for cultural trips</span>
+      </div>
+      <div class="festival-grid" id="festivalGrid"></div>
+    </section>
+
+    <section class="card data-grid reveal">
+      <article>
+        <h2>Recently Opened Place Pages</h2>
+        <div class="kpi-wrap" id="recentPlaces"></div>
+      </article>
+      <article>
+        <h2>Compliance and Trust</h2>
+        <p class="small-note">Commercial static readiness includes legal pages, SEO schema, and analytics-ready setup.</p>
+        <div class="inline-tools">
+          <a class="btn btn-outline btn-small" href="privacy.html">Privacy Policy</a>
+          <a class="btn btn-outline btn-small" href="terms.html">Terms</a>
+          <a class="btn btn-outline btn-small" href="disclaimer.html">Disclaimer</a>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <span>Rove India <span class="js-year"></span> | Static Tourism Discovery Platform</span>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="admin.html">Admin</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top btn btn-secondary btn-small" type="button">Top</button>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Rove India",
+      "url": "https://www.roveindia.in/",
+      "description": "Indian tourist place discovery website with state and union territory destination media.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.roveindia.in/index.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+  </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Rove India",
+      "url": "https://www.roveindia.in/",
+      "logo": "https://www.roveindia.in/images/pic.jpg"
+    }
+  </script>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/common.js"></script>
+  <script src="assets/analytics.js"></script>
+  <script src="assets/index.js"></script>
+  <script>
+    const now = new Date();
+    const stamp = now.toLocaleString("en-IN", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+    document.getElementById("todayStamp").textContent = stamp;
+  </script>
+</body>
+</html>
+
