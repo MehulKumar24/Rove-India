@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <mask id="ring">
+      <rect width="1000" height="1000" fill="black" />
+      <circle cx="500" cy="500" r="500" fill="white" />
+      <circle cx="500" cy="500" r="145" fill="black" />
+    </mask>
+    <g id="cycle-top" shape-rendering="crispEdges">
+      <polygon fill="#1f7a2b" points="500,500 1000,500 990.39,597.55" />
+      <polygon fill="#c5ccd5" points="500,500 990.39,597.55 961.94,691.34" />
+      <polygon fill="#b17235" points="500,500 961.94,691.34 915.73,777.79" />
+      <polygon fill="#06111d" points="500,500 915.73,777.79 853.55,853.55" />
+    </g>
+  </defs>
+  <g mask="url(#ring)" transform="rotate(-90 500 500)">
+    <use href="#cycle-top" />
+    <use href="#cycle-top" transform="rotate(45 500 500)" />
+    <use href="#cycle-top" transform="rotate(90 500 500)" />
+    <use href="#cycle-top" transform="rotate(135 500 500)" />
+    <use href="#cycle-top" transform="rotate(180 500 500)" />
+    <use href="#cycle-top" transform="rotate(225 500 500)" />
+    <use href="#cycle-top" transform="rotate(270 500 500)" />
+    <use href="#cycle-top" transform="rotate(315 500 500)" />
+  </g>
+</svg>
